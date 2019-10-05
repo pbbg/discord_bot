@@ -21,6 +21,4 @@ Route::get('/login/discord/redirect', 'Auth\LoginController@discordRedirect')
 
 Route::get('/login/discord/callback', 'Auth\LoginController@discordCallback');
 
-Route::get('/dashboard', function () {
-    echo "loggined in";
-})->middleware('auth');
+Route::get('/dashboard', 'DashboardController@home')->middleware('auth');
